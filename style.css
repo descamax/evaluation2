@@ -20,12 +20,14 @@ header{
     background-color: pink;
     min-height: 50px;
     min-width: 50px;
+    order : 1;
 }
 
 .player2{
     background-color: lightblue;
     min-height: 50px;
     min-width: 50px;
+    order:3;
 }
 
 .header-player{
@@ -50,6 +52,7 @@ header{
     border : solid yellow 2px;
     min-height: 50px;
     min-width: 50px;
+    order:2;
 }
 
 .dice{
@@ -68,4 +71,12 @@ footer{
     background-color: black;
     min-height: 50px;
     min-width: 50px;
+}
+
+.form-player{
+    border:solid pink 2px;
+}
+
+.form-players{
+    background-color: red;
 }

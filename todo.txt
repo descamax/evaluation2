@@ -1,0 +1,4 @@
+#todo eval2
+
+structurer la page html et style CSS statique
+création en mobile first

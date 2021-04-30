@@ -8,17 +8,90 @@
     <link href="style.css" rel="stylesheet">
     <title>Jeu de dés</title>
 </head>
-<body>
-    <header>
-        <h1>En-tête</h1>
+<body class="container-fluid">
+    <header class="row justify-content-center">
+        <h1 class="text-center">Random-Dice</h1>
     </header>
-    <main>
-        <div class='header-game m-3 p-3'>
-            <h2>en-tête du jeu</h2>
+    <main class="row justify-content-center">
+        <div class='header-game m-3 p-3 row justify-content-center'>
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Règle du jeu (repliable)
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Vous jouez chacun à votre tour.</p>
+                            <p>Si le dé indique une valeur différente à 1, vous stockez ces points dans votre cagnotte provisoire.</p>
+                            <p>Si votre dé indique 1, votre tour d'arrête immédiatement, et votre cagnotte se vide instantanément. Vous ne remportez pas de points ce tout-ci.</p>
+                            <p>Tant que vous ne faites pas de "1", vous pouvez jouer à volonté !</p>
+                            <p>Vous pouvez aussi décider d'empocher sagement votre cagnotte ! Vos points sont alors transférés dans votre bourse et définitivement acquis.</p>
+                            <p>Le premier des deux joueurs qui fera arrivera à 100 points sera déclaré vainqueur !</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
-        <div class='body-game m-3 p-3'>
-            <h2>corps du jeu</h2>
-            <div class='player1 m-3 p-3'>
+        <div class='body-game m-3 p-3 row justify-content-center'>
+            
+            <div class="form-players col-12 col-md-10 col-lg-8 p-3">
+                <div class="row justify-content-center">
+                    <p class="text-center p-2">Informations des joueurs - disparaîtra à l'envoi du formulaire</p>
+
+                    <div class="form-player col-12 col-md-6 p-3">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="name-joueur1" placeholder="nom du joueur 1">
+                              </div>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Choisissez votre avatar</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                        </form>
+                    </div>
+                    <div class="form-player col-12 col-md-6 p-3">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="name-joueur2" placeholder="nom du joueur 2">
+                              </div>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Choisissez votre avatar</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 justify-content-center">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Avec effets sonores
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Sans effets sonores
+                        </label>
+                      </div>
+                    <button type="button" class="btn btn-success">Commencer la partie !</button>
+                </div>
+            </div>
+            
+
+            
+            
+            <div class='player1 m-1 p-1 col-12 col-md-7 col-lg-4'>
                 <div class='header-player m-3 p-3'>
                     <h3>en-tête joueur 1</h3>
                 </div>
@@ -30,7 +103,7 @@
                 </div>
             </div>
 
-            <div class="common m-3 p-3">
+            <div class="common m-3 p-3 col-12 col-md-4 col-lg-3">
                 <div class="dice m-3 p-3">
                     <h3>emplacement pour le dé</h3>
                 </div>
@@ -39,8 +112,8 @@
                 </div>
             </div>
 
-            <div class='player2 m-3'>
-                <div class='header-player p-3'>
+            <div class='player2 m-3 col-12 col-md-7 col-lg-4'>
+                <div class='header-player m-3 p-3'>
                     <h3>en-te^te du joueur2</h3>
                 </div>
                 <div class='body-player m-3 p-3'>
@@ -55,7 +128,7 @@
         </div>
 
     </main>
-    <footer>
+    <footer class="row justify-content-center">
         <h4>pied d epage</h4>
     </footer>
     <script src='script.js'></script>
