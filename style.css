@@ -145,3 +145,10 @@ footer{
 html{
     background-color: black;
 }
+
+.image-avatar{
+    width : 150px;
+    length : auto;
+    border-radius : 0 40px 40px 40px;
+    margin : 10px;
+}

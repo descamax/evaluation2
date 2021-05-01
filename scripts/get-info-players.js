@@ -15,14 +15,14 @@ function Avatar (name, urlImage, description, color) {
     this.color = color;
 }
 
-var renard = new Avatar('renard', '<img src="images/renard.jpg">', 'rusé, vous saurez quand vous arrêter !', 'orange' );
-var kangourou = new Avatar('kangourou', '<img src="images/kangourou.jpg">', 'Sautillant, vous oserez tout !', 'orange' );
-var ecureuil = new Avatar('ecureuil', '<img src="images/ecureuil.jpg">', 'Prudent, vous veillerez sur vos réserves', 'orange' );
-var poule = new Avatar('poule', '<img src="images/poule.jpg">', 'ça picore, ça picore !', 'orange' );
-var panthere = new Avatar('panthere', '<img src="images/panthere.jpg">', "A l'attaque ! Dévorez votre adversaire !", 'noir' );
-var gorille = new Avatar('gorille', '<img src="images/gorille.jpg">', 'Bourrin comme vous êtes, ça va taper fort !', 'noir' );
-var phacochere = new Avatar('phacochere', '<img src="images/phacochere.jpg">', 'Mi-sauvage, mi-modestique, on ne sait pas ce que vous voulez', 'noir' );
-var gnou = new Avatar('gnou', '<img src="images/gnou.jpg">', 'Broutez à volonté !', 'noir' );
+var renard = new Avatar('renard', '<img src="images/renard.jpg" class="image-avatar">', 'rusé, vous saurez quand vous arrêter !', 'orange' );
+var kangourou = new Avatar('kangourou', '<img src="images/kangourou.jpg" class="image-avatar">', 'Sautillant, vous oserez tout !', 'orange' );
+var ecureuil = new Avatar('ecureuil', '<img src="images/ecureuil.jpg" class="image-avatar"', 'Prudent, vous veillerez sur vos réserves', 'orange' );
+var poule = new Avatar('poule', '<img src="images/poule.jpg" class="image-avatar">', 'ça picore, ça picore !', 'orange' );
+var panthere = new Avatar('panthere', '<img src="images/panthere.jpg" class="image-avatar">', "A l'attaque ! Dévorez votre adversaire !", 'noir' );
+var gorille = new Avatar('gorille', '<img src="images/gorille.jpg" class="image-avatar">', 'Bourrin comme vous êtes, ça va taper fort !', 'noir' );
+var phacochere = new Avatar('phacochere', '<img src="images/phacochere.jpg" class="image-avatar">', 'Mi-sauvage, mi-modestique, on ne sait pas ce que vous voulez', 'noir' );
+var gnou = new Avatar('gnou', '<img src="images/gnou.jpg" class="image-avatar">', 'Broutez à volonté !', 'noir' );
 
 const listAvatarsObjects =[renard, kangourou, ecureuil, poule, panthere, gorille, phacochere, gnou];
 
