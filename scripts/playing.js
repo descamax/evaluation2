@@ -1,4 +1,5 @@
 const playing = document.querySelector('.playingDiv');
+const stopping = document.querySelector('.stoppingDiv')
 
 function randomBetween(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -11,10 +12,6 @@ function play(nb) {
     console.log (nb);
 }
 
-let letSGo = $('.lancer');
-
-count = 20;
-
 
 
 
@@ -22,6 +19,8 @@ count = 20;
 playing.addEventListener('submit', (event) => {
     
         event.preventDefault(); 
+        let count = 20;
+
 
         console.log('jeu en cours');
         while (count >0) {
@@ -32,4 +31,9 @@ playing.addEventListener('submit', (event) => {
 
 
 
+})
+
+stopping.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('stockage des points');
 })
