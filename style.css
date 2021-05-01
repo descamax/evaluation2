@@ -50,12 +50,14 @@ header{
     min-height: 50px;
     min-width: 50px;
     order:2;
+    display :none;
 }
 
 .dice{
-    background-color: red;
+    background-color: black;
     min-height: 50px;
     min-width: 50px;
+    border-radius: 10px;
 }
 
 .info-game{
@@ -96,6 +98,7 @@ footer{
     border-radius: 10px;
     min-height: 50px;
     min-width: 50px;
+    display : none;
 
 }
 
@@ -119,7 +122,7 @@ footer{
 
 .number1 {
     color :white ;
-    background-color : black;
+    background-color : red;
 }
 
 .btn-game {

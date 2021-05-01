@@ -100,11 +100,11 @@ form.addEventListener('submit', (event) => {
         removeDiv('.form-players')
         $('.name2').text(name2.value.toUpperCase());
         $('.name1').text(name1.value.toUpperCase());
-        $('#imgAvatar2').html('<p>avatar2</p>');
-        $('.presentation1').text(avatar1.value);
-        $(".presentation2").text(avatar2.value);
+        $('.presentation1').text(avatarToObject(avatar1.value).description);
+        $('.presentation2').text(avatarToObject(avatar2.value).description);
         $('.imgPlayer1').replaceWith(avatarToObject(avatar1.value).urlImage);
         $('.imgPlayer2').replaceWith(avatarToObject(avatar2.value).urlImage);
+        $('.common, .player').css('display', 'block');
         
 
   }
