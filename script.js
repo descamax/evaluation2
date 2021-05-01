@@ -23,19 +23,6 @@ $(document).ready(() => {
         $('.help-text').hide(250)
     });
 
-    //disparition du formulaire au clic
- /*
-    let envoiFormulaire = document.getElementById("boutonEnvoi");
 
-    envoiFormulaire.addEventListener("click", (){
-        if (getComputedStyle(form.display !='none'){
-            form.style.display = 'none';
-        } else {
-            form.style.display = 'block';
-        }
-    })
-*/
-
-//removeDiv('.form-players');
 
 });

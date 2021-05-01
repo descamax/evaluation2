@@ -4,7 +4,7 @@ let name1 = document.getElementById('name-joueur1');
 let name2 = document.getElementById('name-joueur2');
 let avatar1 = document.getElementById('avatar1');
 let avatar2 = document.getElementById('avatar2');
-let form = document.querySelector('form');
+let form = document.querySelector('.formPlayers');
 
 
 
@@ -97,7 +97,7 @@ form.addEventListener('submit', (event) => {
 
 
         event.preventDefault();  
-        removeDiv('.form-players')
+        removeDiv('.formPlayers')
         $('.name2').text(name2.value.toUpperCase());
         $('.name1').text(name1.value.toUpperCase());
         $('.presentation1').text(avatarToObject(avatar1.value).description);
