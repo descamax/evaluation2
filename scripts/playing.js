@@ -110,6 +110,7 @@ $(document).ready(() => {
         console.log('stockage de la cagnotte, score total : ' + score1);
         $('.score1').text(score1);
         reinitialiserAffichage();
+        $('.jauge1').css('width', score1+'%').text(score1 +'%');
 
 
     })

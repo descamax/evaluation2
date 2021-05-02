@@ -1,11 +1,14 @@
 #todo eval2
 
-structurer la page html et style CSS statique
 création en mobile first
 
-coder le jeu en lui-même sans chercher l'apparence
 
 régler l'apparence  :
 - régler la taille des avatars
 - régler le texte des avatars
 - faire bouger les cartes en fonction des tours de jeu
+-régler l'apparence du dé
+
+jeu :
+- défiler les numéros lors du tirage
+- condition d'arrêt à 100 points
