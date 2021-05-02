@@ -1,39 +1,85 @@
-const playing = document.querySelector('.playingDiv');
-const stopping = document.querySelector('.stoppingDiv')
+$(document).ready(() => {
+    const playing1 = $('.lancer1');
+    const playing2 = $('.lancer2');
 
-function randomBetween(min, max){
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+    const stock1 = $('.encaisser1');
+    const stock2 = $('.encaisser2');
 
-function play(nb) {
-    while(nb>6){
-        nb=Math.round(nb/6);
+    var score1 = 0;
+    var score2 = 0;
+
+    var cagnotte1 = 0;
+    var cagnotte2 = 0;
+
+    function randomBetween(min, max){
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    console.log (nb);
-}
+
+    function play(){
+        let valeurs = [];
+        for (let i = 0 ; i < 10 ; i++){
+            valeurs.push(randomBetween(1, 6));
+        }
+        console.log(valeurs);
+        console.log(valeurs[9]+' points à ce lancer')
+        return (valeurs[9]);
+    }
 
 
+    playing1.click(function() {
+        var jet = play();
+        console.log(jet);
+        if (jet === 1) {
+            cagnotte1 = 0;
+            console.log ('perdu : ' + cagnotte1);
+            $('.lancer1').css('display', 'none');
+            $('.encaisser1').css('display', 'none');
+            $('.lancer2').css('display', 'block');
+            $('.encaisser2').css('display', 'block');
+        } else {
+            cagnotte1 = cagnotte1 + jet;
+            console.log ('gagné ! cagnotte1 = ' + cagnotte1);
+        }
+    })
 
+    playing2.click(function() {
+        var jet = play();
+        console.log(jet);
+        if (jet === 1) {
+            cagnotte2 = 0;
+            console.log ('perdu ' + cagnotte2);
+            $('.lancer2').css('display', 'none');
+            $('.lancer1').css('display', 'block');
+            $('.encaisser2').css('display', 'none');
+            $('.encaisser1').css('display', 'block');
+        } else {
+            cagnotte2 = cagnotte2 + jet;
+            console.log ('gagné ! cagnotte2 = ' + cagnotte2);
+        }
+    })
 
+    stock1.click(function() {
+        console.log('votre score précédent : ' + score1)
+        score1 = score1 + cagnotte1;
+        $('.lancer1').css('display', 'none');
+        $('.encaisser1').css('display', 'none');
+        $('.lancer2').css('display', 'block');
+        $('.encaisser2').css('display', 'block');
 
-playing.addEventListener('submit', (event) => {
-    
-        event.preventDefault(); 
-        let count = 20;
+        console.log('stockage de la cagnotte, score total : ' + score1);
+        cagnotte1 = 0;
+    })
 
-
-        console.log('jeu en cours');
-        while (count >0) {
-            let nb = randomBetween(50000, 280000);
-            play (nb);
-            count = count-1;
-        };
-
-
+    stock2.click(function() {
+        console.log('votre score précédent : ' + score2)
+        score2 = score2 + cagnotte2;
+        $('.lancer1').css('display', 'block');
+        $('.encaisser1').css('display', 'block');
+        $('.lancer2').css('display', 'none');
+        $('.encaisser2').css('display', 'none');
+        console.log('stockage de la cagnotte, score total = '+ score2);
+        cagnotte2 = 0;
+    })
 
 })
 
-stopping.addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.log('stockage des points');
-})
