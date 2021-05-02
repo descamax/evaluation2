@@ -5,14 +5,8 @@ création en mobile first
 
 régler l'apparence  :
 - régler la taille des avatars
-- régler le texte des avatars
-- faire bouger les cartes en fonction des tours de jeu
 -régler l'apparence du dé
 
 jeu :
 - défiler les numéros lors du tirage
-- condition d'arrêt à 100 points
-
-préciser à qui est la cagnotte dans .info-game
-
-ajouter un message plus clair pour le perdant quand il a fait 1
+- ajouter du son ?

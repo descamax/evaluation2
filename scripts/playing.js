@@ -214,7 +214,7 @@ $(document).ready(() => {
                 $('.current-player').css('color', oppositeColorFont);
                 cagnotte = 0;
                 switchPlayers();
-                testFin(20);
+                testFin(100);
                 break;
             case 2 :
                 console.log ('gagné ! cagnotte = '+ cagnotte)
@@ -269,7 +269,7 @@ $(document).ready(() => {
         $('.current-player').css('color', oppositeColorFont);
         switchPlayers();
         reinitialiserAffichage();
-        testFin(20);
+        testFin(100);
 
     })
 })

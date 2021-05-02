@@ -1,4 +1,4 @@
-function ObjectPlayer (name, number, numberText, encaisser, lancer, cagnotte, score, background, colorFont, location, jauge, spanScore) {
+function ObjectPlayer (name, number, numberText, encaisser, lancer, cagnotte, score, background, colorFont, location, jauge, spanScore, important) {
     this.name = name;
     this.number = number;
     this.numberText = numberText;
@@ -11,6 +11,7 @@ function ObjectPlayer (name, number, numberText, encaisser, lancer, cagnotte, sc
     this.location = location;
     this.jauge = jauge;
     this.spanScore = spanScore;
+    this.important = important;
 }
 
 var player1= name1.value.toUpperCase();
@@ -21,12 +22,13 @@ var cagnotte1 = 0;
 var cagnotte2 = 0;
 
 
-var objectPlayer1 = new ObjectPlayer (player1, '.number1', '.numberText1', '.encaisser1', '.lancer1', cagnotte1, score1, 'orange', 'black', "#cardPlayer1", '.jauge1', '.scoreP1')
-var objectPlayer2 = new ObjectPlayer (player2, '.number2', '.numberText2', '.encaisser2', '.lancer2', cagnotte2, score2, 'black', 'white', "#cardPlayer2", '.jauge2', '.scoreP2')
+var objectPlayer1 = new ObjectPlayer (player1, '.number1', '.numberText1', '.encaisser1', '.lancer1', cagnotte1, score1, 'orange', 'black', "#cardPlayer1", '.jauge1', '.scoreP1', '.player1')
+var objectPlayer2 = new ObjectPlayer (player2, '.number2', '.numberText2', '.encaisser2', '.lancer2', cagnotte2, score2, 'black', 'white', "#cardPlayer2", '.jauge2', '.scoreP2', '.player2')
 var currentObjectPlayer = objectPlayer1;
 var currentOpposite = objectPlayer2;
 
 function switchPlayers() {
+
     if (currentObjectPlayer === objectPlayer1) {
         currentObjectPlayer = objectPlayer2;
         currentOpposite = objectPlayer1;

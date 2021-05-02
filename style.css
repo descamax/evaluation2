@@ -27,6 +27,19 @@
     color : white;
 }
 
+.card-player1, .card-player2{
+    border-radius: 10px;
+}
+
+.card-title {
+    text-align : center;  
+    font-size: 1.75em;  
+}
+
+.colorWhite{
+    color : white;
+}
+
 .common{
     border : solid yellow 2px;
     border-radius : 10px;
@@ -105,6 +118,11 @@ footer{
     margin-bottom : 10px;
 }
 
+.formTextIntro {
+    font-weight: 700;
+    font-size : 1.5em;
+}
+
 header{
     background-color: blue;
     min-height: 50px;
@@ -135,10 +153,11 @@ header{
 
 html{
     background-color: black;
+    font-family: 'Lato', sans-serif;
 }
 
 .image-avatar{
-    width : 150px;
+    width : 100%;
     length : auto;
     border-radius : 0 40px 40px 40px;
     margin : 10px;
@@ -166,16 +185,30 @@ html{
     min-height: 50px;
     min-width: 50px;
     display : none;
+    margin : 10px;
 }
 
 .player1{
-    order : 1;
+    order : 1 ;
 }
 
 .player2{
-    order:3;
+    order:3 ;
 }
 
+.presentation1, .presentation2 {
+    text-align : justify;
+    font-size : 1.4em;
+    padding : 10px;
+}
+
+  @media (max-width:768px){
+    .image-avatar{
+      max-width : 100px !important;
+    }
+  
+
+  }
 
 
 
