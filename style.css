@@ -1,32 +1,5 @@
-header{
-    background-color: blue;
-    min-height: 50px;
-    min-width: 50px;
-    color : white;
-}
-
-.header-game{
-    background-color: yellow;
-    min-height: 50px;
-    min-width: 50px;
-}
-
 .body-game{
     background-color : green;
-    min-height: 50px;
-    min-width: 50px;
-}
-
-.player1{
-    order : 1;
-}
-
-.player2{
-    order:3;
-}
-
-.header-player{
-    border : solid black 1px;
     min-height: 50px;
     min-width: 50px;
 }
@@ -35,94 +8,6 @@ header{
     border : solid brown 3px;
     min-height: 50px;
     min-width: 50px;
-}
-
-.footer-player{
-    border : solid grey 2 px;
-    min-height: 50px;
-    min-width: 50px;
-}
-
-.common{
-    border : solid yellow 2px;
-    border-radius : 10px;
-    background-color: brown;
-    min-height: 50px;
-    min-width: 50px;
-    order:2;
-    display :none;
-}
-
-.dice{
-    background-color: black;
-    min-height: 50px;
-    min-width: 50px;
-    border-radius: 10px;
-}
-
-.info-game{
-    background-color : orange;
-    min-height: 50px;
-    min-width: 50px;
-}
-
-footer{
-    background-color: black;
-    min-height: 50px;
-    min-width: 50px;
-}
-
-.form-player{
-    margin-left : auto;
-    margin-right : auto;
-    border-radius: 10px;
-}
-
-.form-players{
-    background-color: brown;
-    border-radius : 10px;
-    margin-bottom : 10px;
-}
-
-.form-player1{
-    background-color: orange;
-
-}
-
-.form-player2{
-    background-color: black;
-
-}
-
-.player {
-    border-radius: 10px;
-    min-height: 50px;
-    min-width: 50px;
-    display : none;
-
-}
-
-.help-text {
-    color: #2b2b2b;
-    font-size: 12px;
-    display: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius : 0 0 4px 4px;
-    padding : 5px;
-}
-
-.diceNumber {
-    text-align : center;
-    border : solid black 1px;
-    margin : 5px;
-    padding : 5px;
-    border-radius : 5px;
-    background-color: white;
-}
-
-.number1 {
-    color :white ;
-    background-color : red;
 }
 
 .btn-game {
@@ -142,6 +27,112 @@ footer{
     color : white;
 }
 
+.common{
+    border : solid yellow 2px;
+    border-radius : 10px;
+    background-color: brown;
+    min-height: 50px;
+    min-width: 50px;
+    order:2;
+    display :none;
+}
+
+.currentPlayerParent {
+    display : grid;
+    align-items : center;
+}
+
+.currentPlayer{
+    text-align :center;
+    align-self : center;
+}
+
+.dice{
+    background-color: orange;
+    min-height: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+}
+
+.diceNumber, .diceNumber1 {
+    height : 3em;
+    display : grid;
+    justify-content: center;
+    align-items: center;
+    margin : 5px;
+    padding : 5px;
+    border-radius : 5px;
+    border : solid black 1px;
+}
+
+.diceNumber{
+    background-color: white;
+}
+
+.encaisser1, .encaisser2, .lancer2{
+    display : none;
+}
+
+.footer-player{
+    border : solid grey 2 px;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+footer{
+    background-color: black;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.form-player{
+    margin-left : auto;
+    margin-right : auto;
+    border-radius: 10px;
+}
+
+.form-player1{
+    background-color: orange;
+}
+
+.form-player2{
+    background-color: black;
+}
+
+.form-players{
+    background-color: brown;
+    border-radius : 10px;
+    margin-bottom : 10px;
+}
+
+header{
+    background-color: blue;
+    min-height: 50px;
+    min-width: 50px;
+    color : white;
+}
+
+.header-game{
+    background-color: yellow;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.header-player{
+    border : solid black 1px;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.help-text {
+    color: #2b2b2b;
+    font-size: 12px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius : 0 0 4px 4px;
+    padding : 5px;
+}
+
 html{
     background-color: black;
 }
@@ -153,6 +144,43 @@ html{
     margin : 10px;
 }
 
-.encaisser1, .encaisser2, .lancer2{
+.info-game{
+    background-color : orange;
+    min-height: 50px;
+    min-width: 50px;
+    text-align : center;
+    border-radius: 10px;
+}
+
+.number1 {
+    color :white ;
+    background-color : red;
+}
+
+.numberText {
+    align-self:center;
+}
+
+.player {
+    border-radius: 10px;
+    min-height: 50px;
+    min-width: 50px;
     display : none;
 }
+
+.player1{
+    order : 1;
+}
+
+.player2{
+    order:3;
+}
+
+
+
+
+
+
+
+
+

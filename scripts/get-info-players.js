@@ -1,9 +1,9 @@
-let error='';
+var error='';
 
-let name1 = document.getElementById('name-joueur1');
-let name2 = document.getElementById('name-joueur2');
-let avatar1 = document.getElementById('avatar1');
-let avatar2 = document.getElementById('avatar2');
+const name1 = document.getElementById('name-joueur1');
+const name2 = document.getElementById('name-joueur2');
+const avatar1 = document.getElementById('avatar1');
+const avatar2 = document.getElementById('avatar2');
 let form = document.querySelector('.formPlayers');
 
 

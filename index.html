@@ -102,7 +102,7 @@
             
             
             <div class='player1 player m-1 p-1 col-12 col-md-7 col-lg-4'>
-                <div class="card-player1 card mb-3">
+                <div class="card-player1 card mb-3" id="cardPlayer1">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="images/joueur1.jpg" class="imgPlayer1" id='imgAvatar1' alt="avatar joueur 1">
@@ -143,24 +143,29 @@
             <div class="common m-3 p-3 col-12 col-md-4 col-lg-3">
                 <div class="dice m-3 p-3 justify-content-center">
                     <div class="container-fluid">
+                        <div class="row justify-content-center currentPlayerParent">
+                            <div class="current-player mb-2">
+                                <span>à </span><span class="name-player">Joueur 1</span><span> de jouer</span>
+                            </div>
+                        </div>
                         <div class="row justify-content-center">
-                            <div class="diceNumber number1 col-3">
-                                1
+                            <div class="diceNumber1 NumberLose number1 col-3">
+                                <div class="numberText numberText1">1</div>
                             </div>
                             <div class="diceNumber number2 col-3">
-                                2
+                                <div class="numberText numberText2">2</div>
                             </div>
                             <div class="diceNumber number3 col-3">
-                                3
+                                <div class="numberText numberText3">3</div>
                             </div>
                             <div class="diceNumber number4 col-3">
-                                4
+                                <div class="numberText numberText4">4</div>
                             </div>
                             <div class="diceNumber number5 col-3">
-                                5
+                                <div class="numberText numberText5">5</div>
                             </div>
                             <div class="diceNumber number6 col-3">
-                                6
+                                <div class="numberText numberText6">6</div>
                             </div>
                         </div>
                     </div>
@@ -174,7 +179,7 @@
             </div>
 
             <div class='player2 player m-1 p-1 col-12 col-md-7 col-lg-4'>
-                <div class="card-player2 card mb-3">
+                <div class="card-player2 card mb-3" id='cardPlayer2'>
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="images/joueur2.jpg" class="imgPlayer2" id='imgAvatar2' alt="avatar joueur 2">
@@ -205,6 +210,9 @@
                         <p class="card-text">
                             <span>Votre score actuel est de </span><span class="score2">0</span><span> points</span>
                         </p>
+                        <div class="progress">
+                            <div class="progress-bar jauge2" role="progressbar" style="width: 0%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
                     </div>
                 </div>
 
@@ -216,6 +224,7 @@
     </main>
     <footer class="row justify-content-center">
         <h4>pied de page</h4>
+        
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="scripts/get-info-players.js"></script>

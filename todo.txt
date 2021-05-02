@@ -12,3 +12,7 @@ régler l'apparence  :
 jeu :
 - défiler les numéros lors du tirage
 - condition d'arrêt à 100 points
+
+préciser à qui est la cagnotte dans .info-game
+
+ajouter un message plus clair pour le perdant quand il a fait 1
