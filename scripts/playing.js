@@ -79,6 +79,7 @@ $(document).ready(() => {
         $('.encaisser2').css('display', 'none');
         console.log('stockage de la cagnotte, score total = '+ score2);
         cagnotte2 = 0;
+        $('.score2').text(score2);
     })
 
 })
