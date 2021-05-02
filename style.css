@@ -152,3 +152,7 @@ html{
     border-radius : 0 40px 40px 40px;
     margin : 10px;
 }
+
+.encaisser1, .encaisser2, .lancer2{
+    display : none;
+}
