@@ -39,6 +39,47 @@ $(document).ready(() => {
        reinitialiserDe();
     }
 
+    function initialiserTout(){
+        reinitialiserDe();
+        let encaisser = currentObjectPlayer.encaisser;
+        let lancer = currentObjectPlayer.lancer;
+        let lancerOpposite = currentOpposite.lancer;
+        let oppositePlayer = currentOpposite.name;
+        //let cagnotte = currentObjectPlayer.cagnotte;
+        let score = currentObjectPlayer.score;
+        let background = currentObjectPlayer.background;
+        let oppositeBackground = currentOpposite.background;
+        let colorFont = currentObjectPlayer.colorFont;
+        let oppositeColorFont = currentOpposite.colorFont;
+        let location = currentObjectPlayer.location;
+        let oppositeLocation = currentOpposite.location;
+        let spanScore = currentObjectPlayer.spanScore;
+        let oppositeSpanScore = currentOpposite.spanScore;
+        let jauge = currentObjectPlayer.jauge;
+        let oppositeJauge = currentOpposite.jauge;
+        $(spanScore).text('0');
+        $(oppositeSpanScore).text('0');
+        $('.cagnotte').text(cagnotte + ' point');
+        $(jauge).css('width', '0%').text('0%');
+        $(oppositeJauge).css('width', '0%').text('0%');
+        currentObjectPlayer.score=0;
+        currentOpposite.score=0;
+
+
+
+    }
+
+    function testFin(nb){
+
+        if (currentObjectPlayer.score>=nb) {
+            alert(`la partie se termine sur la victoire de ${currentObjectPlayer.name} !\nLe score est de ${currentObjectPlayer.score} à ${currentOpposite.score}.`);
+            initialiserTout();
+        } else if (currentOpposite.score>=nb) {
+            alert(`la partie se termine sur la victoire de ${currentOpposite.name} !\nLe score est de ${currentOpposite.score} à ${currentObjectPlayer.score}.`);
+            initialiserTout();
+        }
+    }
+
 /*
     function realPlay() {
         reinitialiserDe();
@@ -113,7 +154,6 @@ $(document).ready(() => {
 
         switch (valeur) {
             case 1 :
-                console.log ('ah bon');
                 $('.number1').css('border', 'solid yellow 2px');
                 $('.numberText1').css('font-size', '1.5em');
                 break;
@@ -162,18 +202,19 @@ $(document).ready(() => {
         cagnotte = cagnotte + jet
         switch (jet) {
             case 1 :
-                cagnotte = 0;
-                console.log ('perdu : ' + cagnotte);
+                
+                console.log ('Vous avez fait 1 - vous perdez tout');
                 $(lancer).css('display', 'none');
                 $(encaisser).css('display', 'none');
                 $(lancerOpposite).css('display', 'block');
                 document.location.href=oppositeLocation;
                 $('.name-player').text(oppositePlayer)
-                $('.info-game').text('Vous avez perdu, à "'+oppositePlayer+'" de jouer');
+                $('.info-game').text('Vous avez gâché votre cagnotte de '+(cagnotte-1)+ ' points ! C\'est à "'+oppositePlayer+'" de jouer');
                 $('.dice').css('background-color', oppositeBackground)
                 $('.current-player').css('color', oppositeColorFont);
-                
+                cagnotte = 0;
                 switchPlayers();
+                testFin(20);
                 break;
             case 2 :
                 console.log ('gagné ! cagnotte = '+ cagnotte)
@@ -199,18 +240,18 @@ $(document).ready(() => {
     })
 
     stock.click(function() {
-        score = currentObjectPlayer.score;
+        let score = currentObjectPlayer.score;
         //cagnotte = currentObjectPlayer.cagnotte;
-        lancer =currentObjectPlayer.lancer;
-        encaisser =currentObjectPlayer.encaisser;
-        oppositeLancer = currentOpposite.lancer;
-        jauge = currentObjectPlayer.jauge;
-        player = currentObjectPlayer.name;
-        oppositeLocation = currentOpposite.location;
-        oppositePlayer = currentOpposite.name;
-        oppositeBackground = currentOpposite.background;
-        oppositeColorFont = currentOpposite.colorFont;
-        spanScore = currentObjectPlayer.spanScore;
+        let lancer =currentObjectPlayer.lancer;
+        let encaisser =currentObjectPlayer.encaisser;
+        let oppositeLancer = currentOpposite.lancer;
+        let jauge = currentObjectPlayer.jauge;
+        let player = currentObjectPlayer.name;
+        let oppositeLocation = currentOpposite.location;
+        let oppositePlayer = currentOpposite.name;
+        let oppositeBackground = currentOpposite.background;
+        let oppositeColorFont = currentOpposite.colorFont;
+        let spanScore = currentObjectPlayer.spanScore;
 
         console.log('votre score précédent : ' + score)
         score = score + cagnotte;
@@ -221,8 +262,6 @@ $(document).ready(() => {
         console.log('stockage de la cagnotte, score total : ' + score);
         $(spanScore).text(score);
         $('.info-game').text(player + ' vient d\'encaisser '+cagnotte+' points.')
-
-
         $(jauge).css('width', score+'%').text(score +'%');
         document.location.href=oppositeLocation;
         $('.name-player').text(oppositePlayer)
@@ -230,151 +269,8 @@ $(document).ready(() => {
         $('.current-player').css('color', oppositeColorFont);
         switchPlayers();
         reinitialiserAffichage();
-    })
-
-
-
-  /*  playing1.click(function() {
-        let encaisser = currentObjectPlayer.encaisser;
-        let lancer = currentObjectPlayer.lancer;
-        let lancerOpposite = currentOpposite.lancer;
-        let oppositePlayer = currentOpposite.name;
-        let cagnotte = currentObjectPlayer.cagnotte;
-        let score = currentObjectPlayer.score;
-        $(encaisser).css('display', 'block')
-        reinitialiserDe();
-        $('.info-game').html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>').css('background-color', 'orange').css('color', 'black');
-        var jet = play();
-        console.log(jet);
-        cagnotte1 = cagnotte1 + jet
-        switch (jet) {
-            case 1 :
-                console.log ('perdu : ' + (cagnotte-1));
-                $(lancer).css('display', 'none');
-                $(encaisser).css('display', 'none');
-                $(lancerOpposite).css('display', 'block');
-                document.location.href="#cardPlayer1";
-                $('.name-player').text(oppositePlayer)
-                $('.info-game').text('Vous avez perdu, à "'+oppositePlayer+'" de jouer');
-                $('.dice').css('background-color', 'black')
-                $('.current-player').css('color', 'white');
-                switchPlayers();
-
-                break;
-            case 2 :
-                console.log ('gagné ! cagnotte1 = '+ cagnotte)
-                break;
-            case 3 :
-               
-                console.log ('gagné ! cagnotte1 = ' + cagnotte);
-                break;
-            case 4 :
-                
-                console.log ('gagné ! cagnotte1 = ' + cagnotte);
-                break;
-            case 5 :
-               
-                console.log ('gagné ! cagnotte1 = ' + cagnotte);
-                break;
-            case 6 :
-               
-                console.log ('gagné ! cagnotte1 = ' + cagnotte);
-                break;
-        }
-        if (cagnotte === 1) {
-            $('.cagnotte').text(cagnotte + ' point');
-        } else {
-            $('.cagnotte').text(cagnotte + ' points');
-        }
-    })
-
-    playing2.click(function() {
-        $('.encaisser2').css('display', 'block')
-        reinitialiserDe();
-        $('.info-game').html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>').css('background-color', 'black').css('color', 'white');
-        var jet = play();
-        console.log(jet);
-        cagnotte2 = cagnotte2 + jet
-        switch (jet) {
-            case 1 :
-                console.log ('perdu : ' + (cagnotte2-1));
-                $('.lancer2').css('display', 'none');
-                $('.encaisser2').css('display', 'none');
-                $('.lancer1').css('display', 'block');
-                document.location.href="#cardPlayer1";
-                $('.name-player').text(player1)
-                $('.info-game').text('Vous avez perdu, à "'+player1+'" de jouer');
-                $('.dice').css('background-color', 'orange');
-                $('.current-player').css('color', 'black');
-
-                break;
-            case 2 :
-                console.log ('gagné ! cagnotte1 = ' + cagnotte2);
-                break;
-            case 3 :
-                console.log ('gagné ! cagnotte1 = ' + cagnotte2);
-                break;
-            case 4 :
-                console.log ('gagné ! cagnotte1 = ' + cagnotte2);
-                break;
-            case 5 :
-                console.log ('gagné ! cagnotte1 = ' + cagnotte2);
-                break;
-            case 6 :
-                console.log ('gagné ! cagnotte1 = ' + cagnotte2);
-                break;
-        }
-        if (cagnotte2 === 1) {
-            $('.cagnotte').text(cagnotte2 + ' point');
-        } else {
-            $('.cagnotte').text(cagnotte2 + ' points');
-        }
-    })
-
-    */
-/*
-    stock1.click(function() {
-        console.log('votre score précédent : ' + score1)
-        score1 = score1 + cagnotte1;
-        $('.lancer1').css('display', 'none');
-        $('.encaisser1').css('display', 'none');
-        $('.lancer2').css('display', 'block');
-        console.log('stockage de la cagnotte, score total : ' + score1);
-        $('.score1').text(score1);
-        $('.info-game').text(player1 + ' vient d\'encaisser '+cagnotte1+' points.')
-
-        reinitialiserAffichage();
-        $('.jauge1').css('width', score1+'%').text(score1 +'%');
-        document.location.href="#cardPlayer2";
-        $('.name-player').text(player2)
-        $('.dice').css('background-color', 'black')
-        $('.current-player').css('color', 'white');
-
-
+        testFin(20);
 
     })
-
-    stock2.click(function() {
-        console.log('votre score précédent : ' + score2)
-        score2 = score2 + cagnotte2;
-        $('.lancer1').css('display', 'block');
-        $('.lancer2').css('display', 'none');
-        $('.encaisser2').css('display', 'none');
-        console.log('stockage de la cagnotte, score total = '+ score2);
-        $('.score2').text(score2);
-        $('.info-game').text(player2 + ' vient d\'encaisser '+cagnotte2+' points.')
-
-        reinitialiserAffichage();
-        $('.jauge2').css('width', score2+'%').text(score2 +'%');
-        document.location.href="#cardPlayer1";
-        $('.name-player').text(player1);
-        $('.dice').css('background-color', 'orange');
-        $('.current-player').css('color', 'black');
-
-
-
-
-    })
-*/
 })
 
