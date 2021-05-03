@@ -1,6 +1,5 @@
 $(document).ready(() => {
 
-    const endGame = 6;
 
     const playing1 = $('.lancer1');
     const playing2 = $('.lancer2');
@@ -91,6 +90,8 @@ $(document).ready(() => {
 
 
     function testFin(nb){
+        console.log($(currentObjectPlayer.name));
+        console.log($(currentOpposite.name));
 
         if (currentObjectPlayer.score>=nb) {
             alert(`la partie se termine sur la victoire de ${currentObjectPlayer.name} !\nLe score est de ${currentObjectPlayer.score} à ${currentOpposite.score}.`);
@@ -283,7 +284,7 @@ $(document).ready(() => {
         console.log('stockage de la cagnotte, score total : ' + score);
         $(spanScore).text(score);
         $('.info-game').text(player + ' vient d\'encaisser '+cagnotte+' points.')
-        $(jauge).css('width', score+'%').text(score +'%');
+        $(jauge).css('width', score*multipl +'%').text(score*multipl +'%');
         document.location.href=oppositeLocation;
         $('.name-player').text(oppositePlayer)
         $('.dice').css('background-color', oppositeBackground)

@@ -1,10 +1,13 @@
 var error='';
+var multipl=1;
 
 const name1 = document.getElementById('name-joueur1');
 const name2 = document.getElementById('name-joueur2');
 const avatar1 = document.getElementById('avatar1');
 const avatar2 = document.getElementById('avatar2');
-const nbPoints = document.getElementById('nbPoints')
+const nbPoints = document.getElementById('nbPoints');    
+var endGame = 5;
+
 let form = document.querySelector('.formPlayers');
 
 
@@ -69,12 +72,32 @@ function validAvatarObject(value, name){
 }
 
 function validNbPoints(value){
-    let valid = (value === 'g20' || value === 'g50' || value === 'g100' || value === 'g200')
-    if (!valid){
-        return ('Vous devez choisir un nombre de points.\n');
-    } else {
+    //let valid = (value === 'g20' || value === 'g50' || value === 'g100' || value === 'g200')
+    //if (!valid){
+    //    return ('Vous devez choisir un nombre de points.\n');
+    //} else {
+        switch (value) {
+            case 'g20' :
+                multipl = 5;
+                endGame = 20;
+                break;
+            case 'g50' :
+                multipl = 2;
+                endGame = 50;
+                break;
+            case 'g100' :
+                multipl = 1;
+                endGame = 100;
+                break;
+            case 'g200' :
+                multipl = 0.5;
+                endGame = 200;
+                break;
+            default :
+            return ('Vous devez choisir un nombre de points.\n');
+        }
         return ('');
-    }
+    //}
 }
 
 
@@ -119,11 +142,6 @@ form.addEventListener('submit', (event) => {
       alert (error);
       event.preventDefault();
   } else {
-
-
-
-
-
         event.preventDefault();  
         removeDiv('.formPlayers')
         $('.name2').text(name2.value.toUpperCase());
@@ -133,6 +151,7 @@ form.addEventListener('submit', (event) => {
         $('.imgPlayer1').replaceWith(avatarToObject(avatar1.value).urlImage);
         $('.imgPlayer2').replaceWith(avatarToObject(avatar2.value).urlImage);
         $('.common, .player').css('display', 'block');
+
         
 
   }
