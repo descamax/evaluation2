@@ -41,7 +41,7 @@ $(document).ready(() => {
     }
 
     function initialiserTout(){
-        reinitialiserDe();
+        reinitialiserAffichage();
         let encaisser = currentObjectPlayer.encaisser;
         let lancer = currentObjectPlayer.lancer;
         let lancerOpposite = currentOpposite.lancer;
@@ -65,44 +65,27 @@ $(document).ready(() => {
         $(oppositeJauge).css('width', '0%').text('0%');
         currentObjectPlayer.score=0;
         currentOpposite.score=0;
-
-        // masquer lancer le dé
         $(lancer).css("display", "none");
-
-        // masquer gameSpace
         $(".gameSpace").css("display", 'none');
-
-        // afficher "voulez-vous rejouer ? : mêmes joueurs / changer les joueurs ?""
         $(".replaySame").css('display', 'block');
-        //refaire une partie avec les mêmes paramètres
         $('.same').click(function(){
             $('.gameSpace').css("display", 'block');
             $(lancer).css('display', 'block');
             $('.replaySame').css('display', 'none');
-            
         })
-        //changer les paramètres de jeu / retour au formulaire
         $('.change').click(function(){
-            //document.location.href="file:///C:/Users/volta/Documents/eval-studi/evaluation2/index.html";
             document.location.href="index.html";
         })
-
     }
 
 
     function testFin(nb){
-        console.log($(currentObjectPlayer.name));
-        console.log($(currentOpposite.name));
-
         if (currentObjectPlayer.score>=nb) {
-            //$('#winner').attr('autoplay', 'true');
             $('#winner')[0].play();
             alert(`la partie se termine sur la victoire de ${currentObjectPlayer.name} !\nLe score est de ${currentObjectPlayer.score} à ${currentOpposite.score}.`);
             initialiserTout();
         } else if (currentOpposite.score>=nb) {
-            //$('#winner').attr('autoplay', 'true');
             $('#winner')[0].play();
-
             alert(`la partie se termine sur la victoire de ${currentOpposite.name} !\nLe score est de ${currentOpposite.score} à ${currentObjectPlayer.score}.`);
             initialiserTout();
         }

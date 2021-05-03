@@ -1,3 +1,22 @@
+.accordion {
+
+}
+
+.accordion-item {
+    border : none !important;
+    border-radius: 2px !important;
+
+}
+
+.accordion-button {
+    background-color:brown !important;
+    color : white !important;
+}
+
+.accordion-button:hover {
+    border : solid white 1px;
+}
+
 .audio {
    visibility : hidden;
 }
@@ -45,7 +64,7 @@
 }
 
 .common{
-    border : solid yellow 2px;
+    /*border : solid yellow 2px;*/
     border-radius : 10px;
     background-color: brown;
     min-height: 50px;
@@ -91,7 +110,6 @@
 }
 
 .footer-player{
-    border : solid grey 2 px;
     min-height: 50px;
     min-width: 50px;
 }
@@ -100,6 +118,16 @@ footer{
     background-color: black;
     min-height: 50px;
     min-width: 50px;
+    color : grey;
+    text-align : center;
+}
+
+.footerLink {
+    color : lightgray;
+}
+
+.footerLink:hover {
+    color : white;
 }
 
 .form-player{
@@ -132,14 +160,14 @@ footer{
 }
 
 header{
-    background-color: blue;
+    background-color:black;
     min-height: 50px;
     min-width: 50px;
     color : white;
 }
 
 .header-game{
-    background-color: yellow;
+    background-color: green;
     min-height: 50px;
     min-width: 50px;
 }
