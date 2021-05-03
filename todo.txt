@@ -5,6 +5,4 @@ jeu :
 
 il y a parfois un problème à la relance : 
 - le nom du joueur ne s'affiche plus dans lespace cagnotte
-- deux boutons "lancer le dé" sont dispo
-
-revoir l'algorithme pas à pas => c'est probablement dû au retard volontaire de changement de couleur de la cagnotte en cas d'encaissement.
+- le nom du joueur ne s'affiche pas dans l'alerte

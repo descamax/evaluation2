@@ -1,0 +1,259 @@
+
+
+.accordion-item {
+    border : none !important;
+    border-radius: 2px !important;
+
+}
+
+.accordion-button {
+    background-color:brown !important;
+    color : white !important;
+}
+
+.accordion-button:hover {
+    border : solid white 1px;
+}
+
+.audio {
+   visibility : hidden;
+}
+
+.body-game{
+    background-color : green;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.body-player{
+    border : solid brown 3px;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.btn-game {
+    margin : 5px;
+}
+
+.btn:hover {
+    border : solid black 1px;
+}
+
+.card-player1{
+    background-color: orange;
+}
+
+.card-player2{
+    background-color: black;
+    color : white;
+}
+
+.card-player1, .card-player2{
+    border-radius: 10px;
+}
+
+.card-title {
+    text-align : center;  
+    font-size: 1.75em;  
+}
+
+.colorWhite{
+    color : white;
+}
+
+.common{
+    /*border : solid yellow 2px;*/
+    border-radius : 10px;
+    background-color: brown;
+    min-height: 50px;
+    min-width: 50px;
+    order:2;
+    display :none;
+}
+
+.currentPlayerParent {
+    display : grid;
+    align-items : center;
+}
+
+.currentPlayer{
+    text-align :center;
+    align-self : center;
+}
+
+.dice{
+    background-color: orange;
+    min-height: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+}
+
+.diceNumber, .diceNumber1 {
+    height : 3em;
+    display : grid;
+    justify-content: center;
+    align-items: center;
+    margin : 5px;
+    padding : 5px;
+    border-radius : 5px;
+    border : solid black 1px;
+}
+
+.diceNumber{
+    background-color: white;
+}
+
+.encaisser1, .encaisser2, .lancer2{
+    display : none;
+}
+
+.footer-player{
+    min-height: 50px;
+    min-width: 50px;
+}
+
+footer{
+    background-color: black;
+    min-height: 50px;
+    min-width: 50px;
+    color : grey;
+    text-align : center;
+}
+
+.footerLink {
+    color : lightgray;
+}
+
+.footerLink:hover {
+    color : white;
+}
+
+.form-player{
+    margin-left : auto;
+    margin-right : auto;
+    border-radius: 10px;
+}
+
+.form-player1{
+    background-color: orange;
+}
+
+.form-player2{
+    background-color: black;
+}
+
+.form-players{
+    background-color: brown;
+    border-radius : 10px;
+    margin-bottom : 10px;
+}
+
+.formTextIntro {
+    font-weight: 700;
+    font-size : 1.5em;
+}
+
+.gameSpace2 {
+    background-color: brown;
+}
+
+header{
+    background-color:black;
+    min-height: 50px;
+    min-width: 50px;
+    color : white;
+}
+
+.header-game{
+    background-color: green;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.header-player{
+    border : solid black 1px;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.help-text {
+    color: #2b2b2b;
+    font-size: 12px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius : 0 0 4px 4px;
+    padding : 5px;
+}
+
+html{
+    background-color: black;
+    font-family: 'Lato', sans-serif;
+}
+
+.image-avatar{
+    width : 100%;
+    length : auto;
+    border-radius : 0 40px 40px 40px;
+    margin : 10px;
+}
+
+.info-game{
+    background-color : orange;
+    min-height: 50px;
+    min-width: 50px;
+    text-align : center;
+    border-radius: 10px;
+}
+
+.number1 {
+    color :white ;
+    background-color : red;
+}
+
+.numberText {
+    align-self:center;
+}
+
+.player {
+    border-radius: 10px;
+    min-height: 50px;
+    min-width: 50px;
+    display : none;
+    margin : 10px;
+}
+
+.player1{
+    order : 1 ;
+}
+
+.player2{
+    order:3 ;
+}
+
+.presentation1, .presentation2 {
+    text-align : justify;
+    font-size : 1.4em;
+    padding : 10px;
+}
+
+.replaySame {
+    display : none;
+    order : 2;
+    border-radius: 10px;
+}
+
+  @media (max-width:768px){
+    .image-avatar{
+      max-width : 100px !important;
+    }
+  
+
+  }
+
+
+
+
+
+
+
+

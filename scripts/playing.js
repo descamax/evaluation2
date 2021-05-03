@@ -78,7 +78,7 @@ $(document).ready(() => {
             
         })
         $('.change').click(function(){
-            document.location.href="index.html";
+            document.location.href="indexGame.html";
         })
     }
 
