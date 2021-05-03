@@ -79,6 +79,7 @@ $(document).ready(() => {
             $('.gameSpace').css("display", 'block');
             $(lancer).css('display', 'block');
             $('.replaySame').css('display', 'none');
+            
         })
         //changer les paramètres de jeu / retour au formulaire
         $('.change').click(function(){
@@ -94,9 +95,14 @@ $(document).ready(() => {
         console.log($(currentOpposite.name));
 
         if (currentObjectPlayer.score>=nb) {
+            //$('#winner').attr('autoplay', 'true');
+            $('#winner')[0].play();
             alert(`la partie se termine sur la victoire de ${currentObjectPlayer.name} !\nLe score est de ${currentObjectPlayer.score} à ${currentOpposite.score}.`);
             initialiserTout();
         } else if (currentOpposite.score>=nb) {
+            //$('#winner').attr('autoplay', 'true');
+            $('#winner')[0].play();
+
             alert(`la partie se termine sur la victoire de ${currentOpposite.name} !\nLe score est de ${currentOpposite.score} à ${currentObjectPlayer.score}.`);
             initialiserTout();
         }

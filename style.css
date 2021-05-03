@@ -1,3 +1,7 @@
+.audio {
+   visibility : hidden;
+}
+
 .body-game{
     background-color : green;
     min-height: 50px;
@@ -209,6 +213,7 @@ html{
 .replaySame {
     display : none;
     order : 2;
+    border-radius: 10px;
 }
 
   @media (max-width:768px){
