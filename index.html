@@ -78,23 +78,20 @@
                                 <option value="gorille">Gorille</option>
                                 <option value="gnou">Gnou</option>
                                 <option value="phacochere">Phacochère</option>
-                              </select>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="d-grid gap-2 justify-content-center mt-2 pt-2">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Avec effets sonores
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Sans effets sonores
-                        </label>
-                      </div>
+
+                    <select class="form-select" name="nbPoints" id='nbPoints' aria-label="Default select example">
+                        <option selected>Partie en combien de points ?</option>
+                        <option value="g20">20</option>
+                        <option value="g50">50</option>
+                        <option value="g100">100</option>
+                        <option value="g200">200</option>
+                    </select>
+
                     <input type="submit" class="btn btn-warning" value='Commencer la partie !' id="boutonEnvoi">
                 </div>
             </form>
@@ -141,7 +138,7 @@
 
             </div>
 
-            <div class="common m-3 p-3 col-12 col-md-4 col-lg-3">
+            <div class="common m-3 p-3 col-12 col-md-4 col-lg-3 gameSpace">
                 <div class="dice m-3 p-3 justify-content-center">
                     <div class="container-fluid">
                         <div class="row justify-content-center currentPlayerParent">
@@ -176,6 +173,21 @@
                 </div>
                 <div class="info-game m-3 p-3">
                     <span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>
+                </div>
+            </div>
+
+            <div class="replaySame m-3 p-3 col-12 col-md-4 col-lg-3 gameSpace2">
+                <div class="replaySame m-3 p-3 justify-content-center">
+                    <div class="replaySame container-fluid">
+                        <div class="replaySame row justify-content-center">
+                            <div class="replaySame mb-2">
+                                <div class="rejouer">
+                                    <button type="button" class="btn btn-warning same m-3">Rejouer avec les mêmes paramètres</button>
+                                    <button type="button" class="btn btn-warning change m-3">Changer les paramètres de la partie</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

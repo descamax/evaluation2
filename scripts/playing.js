@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    const endGame = 6;
+
     const playing1 = $('.lancer1');
     const playing2 = $('.lancer2');
 
@@ -65,9 +67,28 @@ $(document).ready(() => {
         currentObjectPlayer.score=0;
         currentOpposite.score=0;
 
+        // masquer lancer le dé
+        $(lancer).css("display", "none");
 
+        // masquer gameSpace
+        $(".gameSpace").css("display", 'none');
+
+        // afficher "voulez-vous rejouer ? : mêmes joueurs / changer les joueurs ?""
+        $(".replaySame").css('display', 'block');
+        //refaire une partie avec les mêmes paramètres
+        $('.same').click(function(){
+            $('.gameSpace').css("display", 'block');
+            $(lancer).css('display', 'block');
+            $('.replaySame').css('display', 'none');
+        })
+        //changer les paramètres de jeu / retour au formulaire
+        $('.change').click(function(){
+            //document.location.href="file:///C:/Users/volta/Documents/eval-studi/evaluation2/index.html";
+            document.location.href="index.html";
+        })
 
     }
+
 
     function testFin(nb){
 
@@ -214,7 +235,7 @@ $(document).ready(() => {
                 $('.current-player').css('color', oppositeColorFont);
                 cagnotte = 0;
                 switchPlayers();
-                testFin(100);
+                testFin(endGame);
                 break;
             case 2 :
                 console.log ('gagné ! cagnotte = '+ cagnotte)
@@ -269,7 +290,7 @@ $(document).ready(() => {
         $('.current-player').css('color', oppositeColorFont);
         switchPlayers();
         reinitialiserAffichage();
-        testFin(100);
+        testFin(endGame);
 
     })
 })

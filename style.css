@@ -123,6 +123,10 @@ footer{
     font-size : 1.5em;
 }
 
+.gameSpace2 {
+    background-color: brown;
+}
+
 header{
     background-color: blue;
     min-height: 50px;
@@ -200,6 +204,11 @@ html{
     text-align : justify;
     font-size : 1.4em;
     padding : 10px;
+}
+
+.replaySame {
+    display : none;
+    order : 2;
 }
 
   @media (max-width:768px){

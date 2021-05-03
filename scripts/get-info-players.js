@@ -4,6 +4,7 @@ const name1 = document.getElementById('name-joueur1');
 const name2 = document.getElementById('name-joueur2');
 const avatar1 = document.getElementById('avatar1');
 const avatar2 = document.getElementById('avatar2');
+const nbPoints = document.getElementById('nbPoints')
 let form = document.querySelector('.formPlayers');
 
 
@@ -22,7 +23,7 @@ var kangourou = new Avatar('kangourou', '<img src="images/kangourou.jpg" class="
     "Vous êtes sautillant ! Rien ne vous fait peur... alors, foncez !", 
     'orange' );
 var ecureuil = new Avatar('ecureuil', '<img src="images/ecureuil.jpg" class="image-avatar"', 
-    "Vous avez un don pour faire des réserves... Votre adversaire peut trember !", 
+    "Vous avez un don pour faire des réserves... Votre adversaire peut trembler !", 
     'orange' );
 var poule = new Avatar('poule', '<img src="images/poule.jpg" class="image-avatar">', 
     "Picorer peut être la solution pour vous remplir le ventre ! Petit à petit, l'oiseau fait son nid.", 
@@ -67,6 +68,15 @@ function validAvatarObject(value, name){
     }
 }
 
+function validNbPoints(value){
+    let valid = (value === 'g20' || value === 'g50' || value === 'g100' || value === 'g200')
+    if (!valid){
+        return ('Vous devez choisir un nombre de points.\n');
+    } else {
+        return ('');
+    }
+}
+
 
 function validName(value, name){
     if (value.length < 2) {
@@ -96,7 +106,9 @@ form.addEventListener('submit', (event) => {
                 break;
             case 'avatar2' :
                 error += validAvatarObject(form.elements[count].value, 'Joueur 2');
-                break;        
+                break;
+            case 'nbPoints' :
+                error += validNbPoints(form.elements[count].value) ;       
             }
     
     }
