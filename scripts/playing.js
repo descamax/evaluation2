@@ -41,8 +41,8 @@ $(document).ready(() => {
     }
 
     function initialiserTout(){
-        reinitialiserAffichage();
         let encaisser = currentObjectPlayer.encaisser;
+        let encaisserOpposite = currentOpposite.encaisser;
         let lancer = currentObjectPlayer.lancer;
         let lancerOpposite = currentOpposite.lancer;
         let oppositePlayer = currentOpposite.name;
@@ -69,9 +69,13 @@ $(document).ready(() => {
         $(".gameSpace").css("display", 'none');
         $(".replaySame").css('display', 'block');
         $('.same').click(function(){
-            $('.gameSpace').css("display", 'block');
-            $(lancer).css('display', 'block');
             $('.replaySame').css('display', 'none');
+            $('.gameSpace').css('display', 'block');
+            $(lancer).css('display', 'block');
+            $(lancerOpposite).css('display', 'none');
+            $(encaisser).css('display', 'block');
+            $(encaisserOpposite).css('display', 'none');
+            
         })
         $('.change').click(function(){
             document.location.href="index.html";
@@ -157,12 +161,9 @@ $(document).ready(() => {
       }
 */
 
-
-
    function play(){
         valeur = randomBetween(1, 6);
         console.log(valeur+' points à ce lancer')
-
         switch (valeur) {
             case 1 :
                 $('.number1').css('border', 'solid yellow 2px');
@@ -197,13 +198,10 @@ $(document).ready(() => {
         let lancer = currentObjectPlayer.lancer;
         let lancerOpposite = currentOpposite.lancer;
         let oppositePlayer = currentOpposite.name;
-        //let cagnotte = currentObjectPlayer.cagnotte;
-        let score = currentObjectPlayer.score;
         let background = currentObjectPlayer.background;
         let oppositeBackground = currentOpposite.background;
         let colorFont = currentObjectPlayer.colorFont;
         let oppositeColorFont = currentOpposite.colorFont;
-        let location = currentObjectPlayer.location;
         let oppositeLocation = currentOpposite.location;
         $(encaisser).css('display', 'block')
         reinitialiserDe();
@@ -213,7 +211,6 @@ $(document).ready(() => {
         cagnotte = cagnotte + jet
         switch (jet) {
             case 1 :
-                
                 console.log ('Vous avez fait 1 - vous perdez tout');
                 $(lancer).css('display', 'none');
                 $(encaisser).css('display', 'none');
@@ -225,7 +222,6 @@ $(document).ready(() => {
                 $('.current-player').css('color', oppositeColorFont);
                 cagnotte = 0;
                 switchPlayers();
-                testFin(endGame);
                 break;
             case 2 :
                 console.log ('gagné ! cagnotte = '+ cagnotte)
@@ -281,7 +277,6 @@ $(document).ready(() => {
         switchPlayers();
         reinitialiserAffichage();
         testFin(endGame);
-
     })
 })
 
