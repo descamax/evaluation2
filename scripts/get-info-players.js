@@ -1,14 +1,17 @@
 var error='';
 var multipl=1;
 
-const name1 = document.getElementById('name-joueur1');
-const name2 = document.getElementById('name-joueur2');
+
 const avatar1 = document.getElementById('avatar1');
 const avatar2 = document.getElementById('avatar2');
 const nbPoints = document.getElementById('nbPoints');    
 var endGame = 5;
 
 let form = document.querySelector('.formPlayers');
+
+var name1 = document.getElementById('name-joueur1');
+//console.log(name1.value);
+var name2 = document.getElementById('name-joueur2');
 
 
 
@@ -72,10 +75,7 @@ function validAvatarObject(value, name){
 }
 
 function validNbPoints(value){
-    //let valid = (value === 'g20' || value === 'g50' || value === 'g100' || value === 'g200')
-    //if (!valid){
-    //    return ('Vous devez choisir un nombre de points.\n');
-    //} else {
+
         switch (value) {
             case 'g20' :
                 multipl = 5;
@@ -97,15 +97,16 @@ function validNbPoints(value){
             return ('Vous devez choisir un nombre de points.\n');
         }
         return ('');
-    //}
+
 }
 
 
 function validName(value, name){
+    //console.log(value);
     if (value.length < 2) {
         return (name + ' : votre nom doit contenir plus de 2 caractères.\n');
-    } else if (value.length > 10) {
-        return (name + ' : votre nom de joueur doit contenir moins de 10 caractères.\n');
+    } else if (value.length > 15) {
+        return (name + ' : votre nom de joueur doit contenir moins de 15 caractères.\n');
     }else {
         return ('');
     }
@@ -115,13 +116,19 @@ function validName(value, name){
 
 
 form.addEventListener('submit', (event) => {
-    error='';
+    let error='';
+    name1 = document.getElementById('name-joueur1');
+    //console.log (name1.value);
+    name2 = document.getElementById('name-joueur2');
+    //console.log (name2.value);
     for (var count=0; count<form.elements.length; count++) {
         switch (form.elements[count].name) {
-            case 'name1':
+            case 'formName1':
                 error += validName (form.elements[count].value, 'Joueur 1')
+                //console.log(form.elements[count].value);
+                //console.log(name1.value);
                 break;
-            case 'name2' :
+            case 'formName2' :
                 error += validName (form.elements[count].value, 'Joueur 2')
                 break;
             case 'avatar1' :
@@ -142,7 +149,8 @@ form.addEventListener('submit', (event) => {
       alert (error);
       event.preventDefault();
   } else {
-        event.preventDefault();  
+        event.preventDefault();
+        //console.log(name1.value);  
         removeDiv('.formPlayers')
         $('.name2').text(name2.value.toUpperCase());
         $('.name1').text(name1.value.toUpperCase());
@@ -151,10 +159,64 @@ form.addEventListener('submit', (event) => {
         $('.imgPlayer1').replaceWith(avatarToObject(avatar1.value).urlImage);
         $('.imgPlayer2').replaceWith(avatarToObject(avatar2.value).urlImage);
         $('.common, .player').css('display', 'block');
+        $('.name-player').text(name1.value.toUpperCase());
+        
+//début de initialiserTout()
+        var cagnotte = 0;
+
+        let encaisser = currentObjectPlayer.encaisser;
+        let encaisserOpposite = currentOpposite.encaisser;
+        let lancer = currentObjectPlayer.lancer;
+        let lancerOpposite = currentOpposite.lancer;
+        //let oppositePlayer = currentOpposite.name;
+        let oppositePlayer = nameOpposite;
+        let score = currentObjectPlayer.score;
+        let background = currentObjectPlayer.background;
+        let oppositeBackground = currentOpposite.background;
+        let colorFont = currentObjectPlayer.colorFont;
+        let oppositeColorFont = currentOpposite.colorFont;
+        let location = currentObjectPlayer.location;
+        let oppositeLocation = currentOpposite.location;
+        let spanScore = currentObjectPlayer.spanScore;
+        let oppositeSpanScore = currentOpposite.spanScore;
+        let jauge = currentObjectPlayer.jauge;
+        let oppositeJauge = currentOpposite.jauge;
+        let infoGame = currentObjectPlayer.infoGame;
+        let oppositeInfoGame = currentOpposite.infoGame;
+        $(spanScore).text('0');
+        $(oppositeSpanScore).text('0');
+        $('.cagnotte').text(cagnotte + ' point');
+        $(jauge).css('width', '0%').text('0%');
+        $(oppositeJauge).css('width', '0%').text('0%');
+        currentObjectPlayer.score=0;
+        currentOpposite.score=0;
+        $(lancer).css("display", "none");
+        $(infoGame).css('display', 'none');
+        $(oppositeInfoGame).css('display', 'none');
+        //$(".gameSpace").css("display", 'none');
+        //$(".replaySame").css('display', 'block');
+        //$('.same').click(function(){
+            $('.replaySame').css('display', 'none');
+            $('.gameSpace').css('display', 'block');
+            $(lancer).css('display', 'block');
+            $(lancerOpposite).css('display', 'none');
+            $(encaisser).css('display', 'none');
+            $(encaisserOpposite).css('display', 'none');
+            $('.info-game').html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>').css('background-color', background).css('color', colorFont);
+         
+        switchPlayers();
+        switchPlayers();
+        //})
+        //$('.change').click(function(){
+        //    document.location.href="indexGame.html";
+        //})
+
 
         
 
   }
+
+  
 
 
 

@@ -45,8 +45,8 @@ $(document).ready(() => {
         let encaisserOpposite = currentOpposite.encaisser;
         let lancer = currentObjectPlayer.lancer;
         let lancerOpposite = currentOpposite.lancer;
-        let oppositePlayer = currentOpposite.name;
-        //let cagnotte = currentObjectPlayer.cagnotte;
+        //let oppositePlayer = currentOpposite.name;
+        let oppositePlayer = nameOpposite;
         let score = currentObjectPlayer.score;
         let background = currentObjectPlayer.background;
         let oppositeBackground = currentOpposite.background;
@@ -92,80 +92,15 @@ $(document).ready(() => {
     function testFin(nb){
         if (currentObjectPlayer.score>=nb) {
             $('#winner')[0].play();
-            alert(`la partie se termine sur la victoire de ${currentObjectPlayer.name} !\nLe score est de ${currentObjectPlayer.score} à ${currentOpposite.score}.`);
+            alert(`la partie se termine sur la victoire de ${nameCurrent} !\nLe score est de ${currentObjectPlayer.score} à ${currentOpposite.score}.`);
             initialiserTout();
         } else if (currentOpposite.score>=nb) {
             $('#winner')[0].play();
-            alert(`la partie se termine sur la victoire de ${currentOpposite.name} !\nLe score est de ${currentOpposite.score} à ${currentObjectPlayer.score}.`);
+            alert(`la partie se termine sur la victoire de ${nameOpposite} !\nLe score est de ${currentOpposite.score} à ${currentObjectPlayer.score}.`);
             initialiserTout();
         }
     }
 
-/*
-    function realPlay() {
-        reinitialiserDe();
-        let valeur = randomBetween(1, 6);
-              switch (valeur) {
-                case 1 :
-                    $('.number1').css('font-size', '1.5em').css('border', 'solid yellow 2px');
-                    break;
-                case 2 :
-                    $('.number2').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-                case 3 :
-                    $('.number3').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-                case 4 :
-                    $('.number4').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-                case 5 :
-                    $('.number5').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-                case 6 :
-                    $('.number6').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-              }
-        diceValue = valeur;
-      }
-
-    function fakePlay() {
-        var i =0;
-        let delay=50;
-        setTimeout(function() {fakePlay2(i)}, delay);
-        function fakePlay2(i)
-        {
-          reinitialiserDe();
-          i++;
-          let valeur = randomBetween(1, 6);
-              switch (valeur) {
-                case 1 :
-                    $('.number1').css('font-size', '1.5em').css('border', 'solid yellow 2px');
-                    break;
-                case 2 :
-                    $('.number2').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-                case 3 :
-                    $('.number3').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-                case 4 :
-                    $('.number4').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-                case 5 :
-                    $('.number5').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-                case 6 :
-                    $('.number6').css('background-color', 'yellow').css('font-size', '1.5em');
-                    break;
-              }
-          delay = delay*1.2;
-          if (i<10){
-            setTimeout(function() {fakePlay2(i)}, delay);
-          } else {
-              realPlay();
-          }
-        }
-      }
-*/
 
    function play(){
         valeur = randomBetween(1, 6);
@@ -200,10 +135,12 @@ $(document).ready(() => {
     }
 
     playing.click(function() {
+        //console.log(name1.value);
         let encaisser = currentObjectPlayer.encaisser;
         let lancer = currentObjectPlayer.lancer;
         let lancerOpposite = currentOpposite.lancer;
-        let oppositePlayer = currentOpposite.name;
+        //let oppositePlayer = currentOpposite.name;
+        let oppositePlayer = nameOpposite;
         let background = currentObjectPlayer.background;
         let oppositeBackground = currentOpposite.background;
         let colorFont = currentObjectPlayer.colorFont;
@@ -217,6 +154,8 @@ $(document).ready(() => {
         reinitialiserDe();
         $('.info-game').html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>').css('background-color', background).css('color', colorFont);
         $(infoGame).html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>');
+
+        console.log (oppositePlayer); //ici il est faux !
 
         var jet = play();
         console.log(jet);
@@ -266,9 +205,11 @@ $(document).ready(() => {
         let encaisser =currentObjectPlayer.encaisser;
         let oppositeLancer = currentOpposite.lancer;
         let jauge = currentObjectPlayer.jauge;
-        let player = currentObjectPlayer.name;
+        //let player = currentObjectPlayer.name;
+        let player = nameCurrent;
         let oppositeLocation = currentOpposite.location;
-        let oppositePlayer = currentOpposite.name;
+        //let oppositePlayer = currentOpposite.name;
+        let oppositePlayer = nameOpposite;
         let oppositeBackground = currentOpposite.background;
         let oppositeColorFont = currentOpposite.colorFont;
         let spanScore = currentObjectPlayer.spanScore;

@@ -3,8 +3,8 @@ $(document).ready(() => {
  //affichage de la contrainte de nom lorsque le curseur est dans le formulaire
     //texte de la contrainte de nom
     let constraintstext = {
-        name1: 'Le nom de joueur doit contenir entre 2 et 10 caractères et ne doit contenir que des lettres.',
-        name2: 'Le nom de joueur doit contenir entre 2 et 10 caractères et ne doit contenir que des lettres.',
+        formName1: 'Le nom de joueur doit contenir entre 2 et 15 caractères et ne doit contenir que des lettres.',
+        formName2: 'Le nom de joueur doit contenir entre 2 et 15 caractères et ne doit contenir que des lettres.',
     }
 
     let help = $('.js-name-joueur');

@@ -28,14 +28,20 @@ var objectPlayer2 = new ObjectPlayer (player2, '.number2', '.numberText2', '.enc
 var currentObjectPlayer = objectPlayer1;
 var currentOpposite = objectPlayer2;
 
+var nameCurrent = name1.value.toUpperCase();
+var nameOpposite = name2.value.toUpperCase();
 function switchPlayers() {
 
     if (currentObjectPlayer === objectPlayer1) {
         currentObjectPlayer = objectPlayer2;
+        nameCurrent = name2.value.toUpperCase();
+        nameOpposite = name1.value.toUpperCase();
         currentOpposite = objectPlayer1;
     } else {
         currentObjectPlayer = objectPlayer1;
         currentOpposite = objectPlayer2;
+        nameCurrent = name1.value.toUpperCase();
+        nameOpposite = name2.value.toUpperCase();
     }
 }
 
