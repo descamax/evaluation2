@@ -58,6 +58,8 @@ $(document).ready(() => {
         let oppositeSpanScore = currentOpposite.spanScore;
         let jauge = currentObjectPlayer.jauge;
         let oppositeJauge = currentOpposite.jauge;
+        let infoGame = currentObjectPlayer.infoGame;
+        let oppositeInfoGame = currentOpposite.infoGame;
         $(spanScore).text('0');
         $(oppositeSpanScore).text('0');
         $('.cagnotte').text(cagnotte + ' point');
@@ -66,6 +68,8 @@ $(document).ready(() => {
         currentObjectPlayer.score=0;
         currentOpposite.score=0;
         $(lancer).css("display", "none");
+        $(infoGame).css('display', 'none');
+        $(oppositeInfoGame).css('display', 'none');
         $(".gameSpace").css("display", 'none');
         $(".replaySame").css('display', 'block');
         $('.same').click(function(){
@@ -73,8 +77,10 @@ $(document).ready(() => {
             $('.gameSpace').css('display', 'block');
             $(lancer).css('display', 'block');
             $(lancerOpposite).css('display', 'none');
-            $(encaisser).css('display', 'block');
+            $(encaisser).css('display', 'none');
             $(encaisserOpposite).css('display', 'none');
+            $('.info-game').html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>').css('background-color', background).css('color', colorFont);
+         
             
         })
         $('.change').click(function(){
@@ -203,9 +209,15 @@ $(document).ready(() => {
         let colorFont = currentObjectPlayer.colorFont;
         let oppositeColorFont = currentOpposite.colorFont;
         let oppositeLocation = currentOpposite.location;
-        $(encaisser).css('display', 'block')
+        let infoGame = currentObjectPlayer.infoGame;
+        let oppositeInfoGame = currentOpposite.infoGame;
+        $(encaisser).css('display', 'block');
+        $(infoGame).css('display', 'block');
+        $(oppositeInfoGame).css('display', 'none');
         reinitialiserDe();
         $('.info-game').html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>').css('background-color', background).css('color', colorFont);
+        $(infoGame).html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>');
+
         var jet = play();
         console.log(jet);
         cagnotte = cagnotte + jet
@@ -217,9 +229,10 @@ $(document).ready(() => {
                 $(lancerOpposite).css('display', 'block');
                 document.location.href=oppositeLocation;
                 $('.name-player').text(oppositePlayer)
-                $('.info-game').text('Vous avez gâché votre cagnotte de '+(cagnotte-1)+ ' points ! C\'est à "'+oppositePlayer+'" de jouer');
+                $('.info-game').text('le "1" est sorti ! C\'est à "'+oppositePlayer+'" de jouer');
                 $('.dice').css('background-color', oppositeBackground)
                 $('.current-player').css('color', oppositeColorFont);
+                $(infoGame).text('Vous avez gâché votre cagnotte de '+(cagnotte-1)+ ' points ! C\'est à "'+oppositePlayer+'" de jouer');
                 cagnotte = 0;
                 switchPlayers();
                 break;
@@ -259,6 +272,8 @@ $(document).ready(() => {
         let oppositeBackground = currentOpposite.background;
         let oppositeColorFont = currentOpposite.colorFont;
         let spanScore = currentObjectPlayer.spanScore;
+        let infoGame = currentObjectPlayer.infoGame;
+        let oppositeInfoGame = currentOpposite.infoGame;
 
         console.log('votre score précédent : ' + score)
         score = score + cagnotte;
@@ -269,6 +284,7 @@ $(document).ready(() => {
         console.log('stockage de la cagnotte, score total : ' + score);
         $(spanScore).text(score);
         $('.info-game').text(player + ' vient d\'encaisser '+cagnotte+' points.')
+        $(infoGame).text(' Vous venez d\'encaisser '+cagnotte+' points.')
         $(jauge).css('width', score*multipl +'%').text(score*multipl +'%');
         document.location.href=oppositeLocation;
         $('.name-player').text(oppositePlayer)

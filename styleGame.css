@@ -203,6 +203,27 @@ html{
     min-width: 50px;
     text-align : center;
     border-radius: 10px;
+    border : solid black 1px;
+}
+
+.info-game1{
+    background-color: black;
+    color : white;
+    border-radius : 10px;
+    text-align : center;
+    display : none;
+}
+
+.info-game2{
+    background-color: orange;
+    color : black;
+    border-radius: 10px;
+    text-align : center;
+    display : none;
+}
+
+.info-game1, .info-game2 {
+    width : 50%;
 }
 
 .number1 {
