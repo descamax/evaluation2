@@ -28,7 +28,7 @@ var renard = new Avatar('renard', '<img src="images/renard.jpg" class="image-ava
 var kangourou = new Avatar('kangourou', '<img src="images/kangourou.jpg" class="image-avatar">', 
     "Vous êtes sautillant ! Rien ne vous fait peur... alors, foncez !", 
     'orange' );
-var ecureuil = new Avatar('ecureuil', '<img src="images/ecureuil.jpg" class="image-avatar"', 
+var ecureuil = new Avatar('ecureuil', '<img src="images/ecu.jpg" class="image-avatar">', 
     "Vous avez un don pour faire des réserves... Votre adversaire peut trembler !", 
     'orange' );
 var poule = new Avatar('poule', '<img src="images/poule.jpg" class="image-avatar">', 
