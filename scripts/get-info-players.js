@@ -1,20 +1,17 @@
 var error='';
 var multipl=1;
 
-
 const avatar1 = document.getElementById('avatar1');
 const avatar2 = document.getElementById('avatar2');
 const nbPoints = document.getElementById('nbPoints');    
-var endGame = 5;
+var endGame = 5; //initialisé à 5 pour les tests
 
 let form = document.querySelector('.formPlayers');
 
 var name1 = document.getElementById('name-joueur1');
-//console.log(name1.value);
 var name2 = document.getElementById('name-joueur2');
 
-
-
+//creation de l'objet avatar
 function Avatar (name, urlImage, description, color) {
     this.name = name;
     this.urlImage = urlImage;
@@ -22,6 +19,7 @@ function Avatar (name, urlImage, description, color) {
     this.color = color;
 }
 
+// creation des 8 avatars
 var renard = new Avatar('renard', '<img src="images/renard.jpg" class="image-avatar">', 
     "Vous êtes assurément le plus rusé. Mais serez-vous assez prudent ?", 
     'orange' );
@@ -38,7 +36,7 @@ var panthere = new Avatar('panthere', '<img src="images/panthere.jpg" class="ima
     "Vous avez un appétit dévorant ! Vous devriez remplir votre réserve par gros morceaux !", 
     'noir' );
 var gorille = new Avatar('gorille', '<img src="images/gorille.jpg" class="image-avatar">', 
-    "La force brute et un cerveau développé... Auriez-vous trouver le subtil mélange pour gagner ?", 
+    "La force brute et un cerveau développé... Auriez-vous trouvé le subtil mélange pour gagner ?", 
     'noir' );
 var phacochere = new Avatar('phacochere', '<img src="images/phacochere.jpg" class="image-avatar">', 
     "Vous êtes un participant méconnu, mais qui saura prendre les décisions au bon moment !",
@@ -49,10 +47,10 @@ var gnou = new Avatar('gnou', '<img src="images/gnou.jpg" class="image-avatar">'
 
 const listAvatarsObjects =[renard, kangourou, ecureuil, poule, panthere, gorille, phacochere, gnou];
 
+// transformation du choix de l'avatar (string) en objet
 function avatarToObject(value){
     var retour='';
     for (avatarObject of listAvatarsObjects){
-       
         if (value === avatarObject.name) {
             retour = avatarObject;
         }
@@ -60,6 +58,7 @@ function avatarToObject(value){
     return retour;
 }
 
+// les trois fonctions de validation du formulaire
 function validAvatarObject(value, name){
     let search=false;
     for (listAvatarsObject of listAvatarsObjects){
@@ -75,7 +74,6 @@ function validAvatarObject(value, name){
 }
 
 function validNbPoints(value){
-
         switch (value) {
             case 'g20' :
                 multipl = 5;
@@ -100,9 +98,7 @@ function validNbPoints(value){
 
 }
 
-
 function validName(value, name){
-    //console.log(value);
     if (value.length < 2) {
         return (name + ' : votre nom doit contenir plus de 2 caractères.\n');
     } else if (value.length > 15) {
@@ -113,20 +109,15 @@ function validName(value, name){
     
 }
  
-
-
+// soumission du formulaire
 form.addEventListener('submit', (event) => {
     let error='';
     name1 = document.getElementById('name-joueur1');
-    //console.log (name1.value);
     name2 = document.getElementById('name-joueur2');
-    //console.log (name2.value);
     for (var count=0; count<form.elements.length; count++) {
         switch (form.elements[count].name) {
             case 'formName1':
                 error += validName (form.elements[count].value, 'Joueur 1')
-                //console.log(form.elements[count].value);
-                //console.log(name1.value);
                 break;
             case 'formName2' :
                 error += validName (form.elements[count].value, 'Joueur 2')
@@ -140,17 +131,13 @@ form.addEventListener('submit', (event) => {
             case 'nbPoints' :
                 error += validNbPoints(form.elements[count].value) ;       
             }
-    
     }
-    
-    
-     
+   
   if (error !=='') {
       alert (error);
       event.preventDefault();
-  } else {
+  } else {                        //formulaire valide
         event.preventDefault();
-        //console.log(name1.value);  
         removeDiv('.formPlayers')
         $('.name2').text(name2.value.toUpperCase());
         $('.name1').text(name1.value.toUpperCase());
@@ -160,23 +147,16 @@ form.addEventListener('submit', (event) => {
         $('.imgPlayer2').replaceWith(avatarToObject(avatar2.value).urlImage);
         $('.common, .player').css('display', 'block');
         $('.name-player').text(name1.value.toUpperCase());
+        $('#collapseOne').removeClass('show');
         
 //début de initialiserTout()
         var cagnotte = 0;
-
         let encaisser = currentObjectPlayer.encaisser;
         let encaisserOpposite = currentOpposite.encaisser;
         let lancer = currentObjectPlayer.lancer;
         let lancerOpposite = currentOpposite.lancer;
-        //let oppositePlayer = currentOpposite.name;
-        let oppositePlayer = nameOpposite;
-        let score = currentObjectPlayer.score;
         let background = currentObjectPlayer.background;
-        let oppositeBackground = currentOpposite.background;
         let colorFont = currentObjectPlayer.colorFont;
-        let oppositeColorFont = currentOpposite.colorFont;
-        let location = currentObjectPlayer.location;
-        let oppositeLocation = currentOpposite.location;
         let spanScore = currentObjectPlayer.spanScore;
         let oppositeSpanScore = currentOpposite.spanScore;
         let jauge = currentObjectPlayer.jauge;
@@ -193,31 +173,15 @@ form.addEventListener('submit', (event) => {
         $(lancer).css("display", "none");
         $(infoGame).css('display', 'none');
         $(oppositeInfoGame).css('display', 'none');
-        //$(".gameSpace").css("display", 'none');
-        //$(".replaySame").css('display', 'block');
-        //$('.same').click(function(){
-            $('.replaySame').css('display', 'none');
-            $('.gameSpace').css('display', 'block');
-            $(lancer).css('display', 'block');
-            $(lancerOpposite).css('display', 'none');
-            $(encaisser).css('display', 'none');
-            $(encaisserOpposite).css('display', 'none');
-            $('.info-game').html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>').css('background-color', background).css('color', colorFont);
-         
+        $('.replaySame').css('display', 'none');
+        $('.gameSpace').css('display', 'block');
+        $(lancer).css('display', 'block');
+        $(lancerOpposite).css('display', 'none');
+        $(encaisser).css('display', 'none');
+        $(encaisserOpposite).css('display', 'none');
+        $('.info-game').html('<span>Montant de la cagnotte : </span><span class="cagnotte">0 point</span>').css('background-color', background).css('color', colorFont);
         switchPlayers();
         switchPlayers();
-        //})
-        //$('.change').click(function(){
-        //    document.location.href="indexGame.html";
-        //})
-
-
-        
-
   }
-
-  
-
-
 
 })
